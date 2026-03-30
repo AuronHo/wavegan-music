@@ -18,10 +18,11 @@ from pedalboard import Pedalboard, Reverb, Chorus, LowpassFilter, Gain, Delay
 # ==========================================
 # 1. KONFIGURASI SISTEM & MUSIC THEORY
 # ==========================================
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LATENT_DIM = 100
 EMOTION_DIM = 2
 SAMPLE_RATE = 16000
-CHECKPOINT_PATH = r"./checkpoints/generator_epoch_500.pth"
+CHECKPOINT_PATH = os.path.join(BASE_DIR, "generator_epoch_500.pth")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 current_raw_emotion = "Calm" 
